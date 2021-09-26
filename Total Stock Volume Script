@@ -1,2 +1,40 @@
 Create a script that will loop through all the stocks for one year and output the following information:
   The total stock volume of the stock
+
+Sub StockMarketTest():
+
+    For Each ws In Worksheets
+    
+        Dim WorksheetName As String
+        Dim i As Double
+        Dim j As Double
+        Dim LastRow1 As Double
+        Dim LastRow2 As Double
+        Dim Percent_Change As Double
+        
+       'Set a name for the worksheet
+        WorksheetName = ws.Name
+   
+            
+                   'Calculate and differentiate the change in percentage
+                    If ws.Cells(j, 3).Value <> 0 Then
+                   Percent_Change = ((ws.Cells(i, 6).Value - ws.Cells(j, 3).Value) / ws.Cells(j, 3).Value)
+                    
+                    'Set the Perent_Change to percentage formatting
+                    ws.Cells(Ticker, 11).Value = Format(Percent_Change, "Percent")
+                    
+                    Else
+                    
+                    ws.Cells(Ticker, 11).Value = Format(0, "Percent")
+                    
+                    End If
+              
+   
+            
+       'Create a summary table header for the listed items
+        ws.Cells(1, 11).Value = "Percent Change"
+       
+
+    Next ws
+        
+End Sub
