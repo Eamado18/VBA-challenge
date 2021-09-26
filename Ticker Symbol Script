@@ -17,7 +17,7 @@ Sub StockMarketTest():
       'Establish the ticker variable to first row
         Ticker = 2
         
-        'Begin the row to 2
+       'Begin the row to 2
         j = 2
         
         'Establish the Last Row of the ticker data
@@ -30,7 +30,10 @@ Sub StockMarketTest():
                 If ws.Cells(i + 1, 1).Value <> ws.Cells(i, 1).Value Then
                 
                 'Print the ticker name to the summary table
-                ws.Cells(Ticker, 9).Value = ws.Cells(i, 1).Value
+                ws.Cells(Ticker, 9).Value = ws.Cells(i, 1).Value 
+                
+        'Create a summary table header for the listed items
+        ws.Cells(1, 9).Value = "Ticker"
 
 Next ws
         
