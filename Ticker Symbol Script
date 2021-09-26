@@ -1,2 +1,39 @@
 Create a script that will loop through all the stocks for one year and output the following information:
   The ticker symbol
+
+Sub StockMarketTest():
+
+    For Each ws In Worksheets
+    
+        Dim WorksheetName As String
+        Dim i As Double
+        Dim j As Double
+        Dim Ticker As Double
+        Dim LastRow1 As Double
+        Dim LastRow2 As Double
+        Dim Percent_Change As Double
+        
+        'Set a name for the worksheet
+        WorksheetName = ws.Name
+        
+      'Establish the ticker variable to first row
+        Ticker = 2
+        
+        'Begin the row to 2
+        j = 2
+        
+        'Establish the Last Row of the ticker data
+        LastRow1 = ws.Cells(Rows.Count, 1).End(xlUp).Row
+        
+            'Create a loop through all rows
+            For i = 2 To LastRow1
+            
+                'Make sure it is the same ticker symbol, if it is not...
+                If ws.Cells(i + 1, 1).Value <> ws.Cells(i, 1).Value Then
+                
+                'Print the ticker name to the summary table
+                ws.Cells(Ticker, 9).Value = ws.Cells(i, 1).Value
+
+Next ws
+        
+End Sub
