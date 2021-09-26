@@ -11,7 +11,6 @@ Sub StockMarketTest():
         Dim j As Double
         Dim LastRow1 As Double
         Dim LastRow2 As Double
-        Dim Percent_Change As Double
         
        'Set a name for the worksheet
         WorksheetName = ws.Name
