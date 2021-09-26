@@ -31,9 +31,21 @@ Sub StockMarketTest():
                 
                 'Print the ticker name to the summary table
                 ws.Cells(Ticker, 9).Value = ws.Cells(i, 1).Value 
+               
+                        
+        'Add one to the ticker
+                Ticker = Ticker + 1
                 
+                'Create a new start row for the ticker data
+                j = i + 1
+                  
+          End If 
+          
+          Next I
+          
         'Create a summary table header for the listed items
         ws.Cells(1, 9).Value = "Ticker"
+                
 
 Next ws
         
