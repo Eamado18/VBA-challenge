@@ -1,3 +1,27 @@
 Create a script that will loop through all the stocks for one year and output the following information:
   The total stock volume of the stock
 
+
+Sub StockMarketTest():
+
+    For Each ws In Worksheets
+    
+        Dim WorksheetName As String
+        
+        'Set a name for the worksheet
+        WorksheetName = ws.Name
+        
+              
+                'Determine the stock volume and print onto the summary table
+                ws.Cells(Ticker, 12).Value = WorksheetFunction.Sum(Range(ws.Cells(j, 7), ws.Cells(i, 7)))
+                
+            
+       'Create a summary table header for the listed items
+     
+        ws.Cells(1, 12).Value = "Total Stock Volume"
+
+  
+            
+    Next ws
+        
+End Sub
